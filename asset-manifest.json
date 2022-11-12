@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Teknobuilt-Assignment/static/css/main.7777cc6d.css",
-    "main.js": "/Teknobuilt-Assignment/static/js/main.8467f73f.js",
-    "static/js/787.66a4299e.chunk.js": "/Teknobuilt-Assignment/static/js/787.66a4299e.chunk.js",
-    "static/media/loading.gif": "/Teknobuilt-Assignment/static/media/loading.4acb0528b0f33c1f87dc.gif",
-    "index.html": "/Teknobuilt-Assignment/index.html",
-    "main.7777cc6d.css.map": "/Teknobuilt-Assignment/static/css/main.7777cc6d.css.map",
-    "main.8467f73f.js.map": "/Teknobuilt-Assignment/static/js/main.8467f73f.js.map",
-    "787.66a4299e.chunk.js.map": "/Teknobuilt-Assignment/static/js/787.66a4299e.chunk.js.map"
+    "main.css": "/static/css/main.7777cc6d.css",
+    "main.js": "/static/js/main.7b9e32ea.js",
+    "static/js/787.66a4299e.chunk.js": "/static/js/787.66a4299e.chunk.js",
+    "static/media/loading.gif": "/static/media/loading.4acb0528b0f33c1f87dc.gif",
+    "index.html": "/index.html",
+    "main.7777cc6d.css.map": "/static/css/main.7777cc6d.css.map",
+    "main.7b9e32ea.js.map": "/static/js/main.7b9e32ea.js.map",
+    "787.66a4299e.chunk.js.map": "/static/js/787.66a4299e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7777cc6d.css",
-    "static/js/main.8467f73f.js"
+    "static/js/main.7b9e32ea.js"
   ]
 }
