@@ -29,7 +29,7 @@ export const BusinessNews = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      "https://newsapi.org/v2/everything?q=business&from=2022-10-12&sortBy=publishedAt&apiKey=e6b8404de1294692be9dfcd617d10e73"
+      "https://newsapi.org/v2/everything?q=business&from=2022-10-12&sortBy=publishedAt&apiKey=fd1f88a4ca6d487c94e17b405c7fe7b5"
     );
     const data = await res.json();
     const nData = [...newsData];

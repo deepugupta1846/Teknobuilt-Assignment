@@ -31,7 +31,7 @@ export const Home = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=e6b8404de1294692be9dfcd617d10e73"
+      "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=fd1f88a4ca6d487c94e17b405c7fe7b5"
     );
     const data = await res.json();
     const nData = [...newsData];
