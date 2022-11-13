@@ -6,6 +6,7 @@ export const BusinessNews = () => {
   const [newsData, setNewsData] = useState("");
   const [totalResults, setTotalResults] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [pageNumber, setPageNumber] = useState(0);
   useEffect(() => {
     fetchData();
   }, []);
@@ -29,7 +30,7 @@ export const BusinessNews = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      "https://newsapi.org/v2/everything?q=business&from=2022-10-12&sortBy=publishedAt&apiKey=fd1f88a4ca6d487c94e17b405c7fe7b5"
+      `https://news-app-api-ns.herokuapp.com/news-api/business?page=${pageNumber}`
     );
     const data = await res.json();
     const nData = [...newsData];
@@ -38,6 +39,7 @@ export const BusinessNews = () => {
     setTotalResults(data.totalResults);
     console.log(data.totalResults);
     setLoading(false);
+    setPageNumber(pageNumber + 1);
     window.scrollTo(0, scrollYPosition);
   };
 

@@ -28,7 +28,7 @@ export const Navbar = () => {
               </span>
             </div>
           </div>
-          <div className={toggle ? "nav-list-responsive" : "nav-list"}>
+          <div className={toggle ? "nav-list" : "nav-list-responsive"}>
             <Link to="/apple" className="link">
               Apple
             </Link>

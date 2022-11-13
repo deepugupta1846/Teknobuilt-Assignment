@@ -7,6 +7,7 @@ export const Home = () => {
   const [newsData, setNewsData] = useState("");
   const [totalResults, setTotalResults] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [pageNumber, setPageNumber] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -31,7 +32,7 @@ export const Home = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=fd1f88a4ca6d487c94e17b405c7fe7b5"
+      `https://news-app-api-ns.herokuapp.com/news-api/wsg-news?page=${pageNumber}`
     );
     const data = await res.json();
     const nData = [...newsData];
@@ -40,6 +41,7 @@ export const Home = () => {
     setTotalResults(data.totalResults);
     console.log(data.totalResults);
     setLoading(false);
+    setPageNumber(pageNumber + 1);
     window.scrollTo(0, scrollYPosition);
   };
 

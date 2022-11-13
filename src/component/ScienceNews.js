@@ -6,6 +6,7 @@ export const ScienceNews = () => {
   const [newsData, setNewsData] = useState("");
   const [totalResults, setTotalResults] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [pageNumber, setPageNumber] = useState(0);
   useEffect(() => {
     fetchData();
   }, []);
@@ -29,7 +30,7 @@ export const ScienceNews = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      "https://newsapi.org/v2/everything?q=science&from=2022-10-12&sortBy=publishedAt&apiKey=e6b8404de1294692be9dfcd617d10e73"
+      `https://news-app-api-ns.herokuapp.com/news-api/science?page=${pageNumber}`
     );
     const data = await res.json();
     const nData = [...newsData];
@@ -38,6 +39,7 @@ export const ScienceNews = () => {
     setTotalResults(data.totalResults);
     console.log(data.totalResults);
     setLoading(false);
+    setPageNumber(pageNumber + 1);
     window.scrollTo(0, scrollYPosition);
   };
 
