@@ -129,6 +129,25 @@
   color: #ffffff;
   margin-left: 20px;
 }
+.searchbar{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 110px;
+  margin-bottom: -50px;
+}
+.searchbar input{
+  outline: none;
+  border: none;
+  background: none;
+  padding: 20px;
+  width: 90%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  font-size: 18px;
+}
+
+
 @media only screen and (max-width: 600px) {
   .nav-list{
     width: 100%;

@@ -7,6 +7,7 @@ export const BusinessNews = () => {
   const [totalResults, setTotalResults] = useState(0);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
+  const [searchData, setSearchDtata] = useState("");
   useEffect(() => {
     fetchData();
   }, []);
@@ -50,27 +51,48 @@ export const BusinessNews = () => {
           <img src={loadingImage} />
         </div>
       ) : (
-        <InfiniteScroll
-          dataLength={newsData.length} //This is important field to render the next data
-          hasMore={true}
-          next={fetchData}
-          loader={<img width="100px" src={loadingImage} />}
-          endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
-        >
-          <div className="newsCard">
-            {newsData.map((data) => {
-              return (
-                <>
-                  <NewsCard data={data} />
-                </>
-              );
-            })}
+        <div>
+          <div className="searchbar">
+            <input
+              type="text"
+              placeholder="Search news"
+              onChange={(e) => {
+                setSearchDtata(e.target.value);
+              }}
+            />
           </div>
-        </InfiniteScroll>
+          <InfiniteScroll
+            dataLength={newsData.length} //This is important field to render the next data
+            hasMore={true}
+            next={fetchData}
+            loader={<img width="100px" src={loadingImage} />}
+            endMessage={
+              <p style={{ textAlign: "center" }}>
+                <b>Yay! You have seen it all</b>
+              </p>
+            }
+          >
+            <div className="newsCard">
+              {newsData
+                .filter((d) => {
+                  if (searchData === "") {
+                    return d;
+                  } else if (
+                    d.title.toLowerCase().match(searchData.toLowerCase())
+                  ) {
+                    return d;
+                  }
+                })
+                .map((data) => {
+                  return (
+                    <>
+                      <NewsCard data={data} />
+                    </>
+                  );
+                })}
+            </div>
+          </InfiniteScroll>
+        </div>
       )}
     </>
   );
