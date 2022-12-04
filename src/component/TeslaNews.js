@@ -30,7 +30,7 @@ export const Tesla = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      `https://news-app-api-ns.herokuapp.com/news-api/tesla?page=${pageNumber}`
+      `https://nice-suspenders-bull.cyclic.app/news-api/tesla?page=${pageNumber}`
     );
     const data = await res.json();
     const nData = [...newsData];

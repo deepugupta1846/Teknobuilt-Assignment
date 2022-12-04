@@ -33,7 +33,7 @@ export const Home = () => {
 
   const fetchData = async () => {
     const res = await fetch(
-      `https://news-app-api-ns.herokuapp.com/news-api/wsg-news?page=${pageNumber}`
+      `https://nice-suspenders-bull.cyclic.app/news-api/wsg-news?page=${pageNumber}`
     );
     const data = await res.json();
     const nData = [...newsData];
